@@ -34,14 +34,14 @@
 ## 🎯 Project Essentials
 
 ### **Project Identity**
-- **MVP Name**: `[Your MVP Name]`
-- **One-Line Description**: `[What does it do in 10 words or less?]`
-- **Problem**: `[What problem does this solve?]`
+- **MVP Name**: BareValue
+- **One-Line Description**: Proyecto de tasacion de nuda propiedad e inversiones inmobiliarias
+- **Problem**: 	El proyecto ofrece un precio mucho más ajustado a la esperanza de vida
 
 ### **MVP Category** ⚡ *Pick ONE*
 - [ ] 🛍️ E-commerce/Marketplace
 - [ ] 📊 Dashboard/Analytics
-- [ ] 🏢 SaaS Tool
+- [X] 🏢 SaaS Tool
 - [ ] 📝 Content/Blog Platform
 - [ ] 🗓️ Booking/Scheduling
 - [ ] 👥 Social/Community
@@ -54,15 +54,11 @@
 
 > **Critical**: List ONLY the absolute essentials. Extra features = slower delivery.
 
-1. **Feature 1**: `[What it does + who uses it]`
-2. **Feature 2**: `[What it does + who uses it]`
-3. **Feature 3**: `[What it does + who uses it]`
-4. **Feature 4**: `[What it does + who uses it]`
-5. **Feature 5**: `[What it does + who uses it]`
+1. **Feature 1**: Usuario debe poder introducir datos necesarios para calcular la nuda propiedad
 
 ### **Primary User Journey** 🛤️
 ```
-Landing Page → [Action 1] → [Action 2] → [Success State]
+Landing Page → Calcular nuda propiedad
 ```
 
 ---
@@ -70,13 +66,13 @@ Landing Page → [Action 1] → [Action 2] → [Success State]
 ## 👤 Users & Authentication
 
 ### **Authentication Type** ⚡ *Pick ONE*
-- [ ] 🚫 No auth needed (public app)
+- [X] 🚫 No auth needed (public app)
 - [ ] 📧 Email + Password (simple)
 - [ ] 🔗 Magic Link (passwordless)
 - [ ] 🔐 Google OAuth (fastest signup)
 
 ### **User Types** ⚡ *Pick ONE*
-- [ ] Single user type (everyone same permissions)
+- [X] Single user type (everyone same permissions)
 - [ ] Two types: `[Type 1]` and `[Type 2]`
 - [ ] Admin + Users (admin can manage everything)
 
@@ -86,29 +82,10 @@ Landing Page → [Action 1] → [Action 2] → [Success State]
 
 ### **Main Data Objects**
 > What does your app store? Keep it simple.
-
-**Object 1: `[Name - e.g., "User"]`**
-```
-- field1: type (e.g., email: string)
-- field2: type (e.g., name: string)
-- field3: type
-```
-
-**Object 2: `[Name - e.g., "Post/Product/Booking"]`**
-```
-- field1: type
-- field2: type
-- field3: type
-```
-
-**Object 3: `[Name]` (if needed)**
-```
-- field1: type
-- field2: type
-```
+No necesario database
 
 ### **Relationships**
-- `[Object A]` → belongs to → `[Object B]`
+
 
 ---
 
@@ -116,9 +93,9 @@ Landing Page → [Action 1] → [Action 2] → [Success State]
 
 ### **Style Direction** ⚡ *Pick ONE*
 - [ ] 🎯 **Clean & Minimal** (fastest - recommended)
-- [ ] 💼 **Professional/Corporate**
+- [X] 💼 **Professional/Corporate**
 - [ ] 🎨 **Modern/Trendy**
-- [ ] 🌙 **Dark Mode**
+- [X] 🌙 **Dark Mode**
 
 ### **Component Strategy** ⚡ *Auto-Selected for Speed*
 - ✅ **Shadcn/UI Components** (pre-built, fast)
@@ -126,23 +103,18 @@ Landing Page → [Action 1] → [Action 2] → [Success State]
 - ✅ **Responsive Design** (mobile-first)
 
 ### **Colors** (Optional - will use good defaults)
-- Primary: `[color name or #hex]` 
-- Secondary: `[color name or #hex]`
+- Primary: the one suitable for users 
+- Secondary: suitable for the users
 
 ---
 
 ## 📱 Pages & Structure
 
 ### **Required Pages** ⚡ *List ALL pages*
-1. **Homepage**: `[What's on it?]`
-2. **Page 2**: `[Purpose?]`
-3. **Page 3**: `[Purpose?]`
-4. **Dashboard/Profile**: `[What user sees after login?]`
-5. **Settings**: `[What settings do users need?]`
+1. **Homepage**: pagina donde el usuario ve los inputs que tiene que meter para calcular la nuda propiedad
 
 ### **Navigation** 
 ```
-Header: [Link 1] | [Link 2] | [Link 3] | [Login/Profile]
 ```
 
 ---
@@ -161,7 +133,7 @@ Header: [Link 1] | [Link 2] | [Link 3] | [Login/Profile]
 - [ ] 🔍 **Algolia** (search)
 
 ### **Deployment** ⚡ *Auto-Selected*
-- ✅ **Vercel + GitHub** (automatic deployments)
+- ✅ **Vercel + GitHub** (no need nothing My self uploads and conect to vercel)
 
 ---
 
@@ -174,7 +146,7 @@ Header: [Link 1] | [Link 2] | [Link 3] | [Login/Profile]
 - [ ] Marketing emails
 
 ### **Notifications**
-- [ ] Success/error messages (toast)
+- [X] Success/error messages (toast)
 - [ ] Email notifications
 - [ ] Real-time updates
 
@@ -183,9 +155,7 @@ Header: [Link 1] | [Link 2] | [Link 3] | [Login/Profile]
 ## 💼 Business Logic
 
 ### **Key Rules** (if any)
-1. `[Rule 1 - e.g., "Free users get 3 projects max"]`
-2. `[Rule 2 - e.g., "Files must be under 10MB"]`
-3. `[Rule 3]`
+
 
 ### **Special Features** ⚡ *Check if needed*
 - [ ] Search/Filter
@@ -200,25 +170,20 @@ Header: [Link 1] | [Link 2] | [Link 3] | [Login/Profile]
 ## 🎯 Success & Analytics
 
 ### **What Makes This MVP Successful?**
-- Success Metric 1: `[e.g., "100 signups in first week"]`
-- Success Metric 2: `[e.g., "Users create their first project"]`
-
+- Success Metric 1: Uuario calcula la nuda propiedad
 ---
 
 ## 📝 Context & References
 
 ### **Additional Context**
 ```
-[Anything else I should know? Special requirements? Constraints?]
+El usuario quiere hacer el MVP con machine learning en el back, nosotros de momento hacemos mock o falseamos respuestas con json
 ```
 
 ### **Inspiration** (Optional)
-- Similar app/website: `[URL or description]`
-- Reference design: `[URL or description]`
 
 ### **Timeline**
-- Target Launch: `[Date or "ASAP"]`
-- Priority Level: `[High/Medium/Low]`
+
 
 ---
 
