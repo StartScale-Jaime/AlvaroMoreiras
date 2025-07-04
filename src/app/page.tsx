@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { ThemeToggle } from './components';
 
 interface FormData {
   valorVivienda: string;
@@ -82,33 +83,40 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-900 py-8 px-4">
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 px-4 transition-colors">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-              BareValue
-            </span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Herramienta profesional para el cálculo de tasación de nuda propiedad e inversiones inmobiliarias
-          </p>
-          <p className="text-sm text-gray-400 mt-2">
-            Precios ajustados a la esperanza de vida con precisión actuarial
-          </p>
+        {/* Header con Theme Toggle */}
+        <div className="flex justify-between items-start mb-8">
+          <div className="text-center flex-1">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+              <span className="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600 bg-clip-text text-transparent">
+                BareValue
+              </span>
+            </h1>
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+              Herramienta profesional para el cálculo de tasación de nuda propiedad e inversiones inmobiliarias
+            </p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+              Precios ajustados a la esperanza de vida con precisión actuarial
+            </p>
+          </div>
+          
+          {/* Theme Toggle */}
+          <div className="ml-4">
+            <ThemeToggle />
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Formulario */}
-          <div className="glass-effect rounded-lg p-8">
-            <h2 className="text-2xl font-semibold text-white mb-6">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-8 transition-colors">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
               Datos para el Cálculo
             </h2>
             
             <form onSubmit={calcularNudaPropiedad} className="space-y-6">
               <div>
-                <label htmlFor="valorVivienda" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="valorVivienda" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Valor de la Vivienda (€)
                 </label>
                 <input
@@ -118,13 +126,13 @@ export default function Home() {
                   value={formData.valorVivienda}
                   onChange={handleInputChange}
                   placeholder="Ej: 300000"
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                   required
                 />
               </div>
 
               <div>
-                <label htmlFor="edadPropietario" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="edadPropietario" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Edad del Propietario
                 </label>
                 <input
@@ -134,15 +142,15 @@ export default function Home() {
                   value={formData.edadPropietario}
                   onChange={handleInputChange}
                   placeholder="Ej: 75"
-                  min="50"
-                  max="100"
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  min="1"
+                  max="120"
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                   required
                 />
               </div>
 
               <div>
-                <label htmlFor="sexoPropietario" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="sexoPropietario" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Sexo del Propietario
                 </label>
                 <select
@@ -150,7 +158,7 @@ export default function Home() {
                   name="sexoPropietario"
                   value={formData.sexoPropietario}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                   required
                 >
                   <option value="">Seleccionar...</option>
@@ -160,7 +168,7 @@ export default function Home() {
               </div>
 
               <div>
-                <label htmlFor="tipoInversion" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="tipoInversion" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Tipo de Inversión
                 </label>
                 <select
@@ -168,7 +176,7 @@ export default function Home() {
                   name="tipoInversion"
                   value={formData.tipoInversion}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                   required
                 >
                   <option value="">Seleccionar...</option>
@@ -199,7 +207,7 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={limpiarFormulario}
-                  className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition duration-200"
+                  className="px-6 py-3 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold rounded-lg transition duration-200"
                 >
                   Limpiar
                 </button>
@@ -208,60 +216,60 @@ export default function Home() {
           </div>
 
           {/* Resultados */}
-          <div className="glass-effect rounded-lg p-8">
-            <h2 className="text-2xl font-semibold text-white mb-6">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-8 transition-colors">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
               Resultado de la Tasación
             </h2>
             
             {!resultado ? (
               <div className="text-center py-12">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gray-700 rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center transition-colors">
+                  <svg className="w-8 h-8 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                   </svg>
                 </div>
-                <p className="text-gray-400">
+                <p className="text-gray-500 dark:text-gray-400">
                   Complete el formulario para obtener la tasación de nuda propiedad
                 </p>
               </div>
             ) : (
               <div className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="bg-gray-800 rounded-lg p-4">
-                    <h3 className="text-sm font-medium text-gray-400 mb-1">Valor Nuda Propiedad</h3>
-                    <p className="text-2xl font-bold text-green-400">
+                  <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 transition-colors">
+                    <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Valor Nuda Propiedad</h3>
+                    <p className="text-2xl font-bold text-green-600 dark:text-green-400">
                       {resultado.valorNudaPropiedad.toLocaleString('es-ES')} €
                     </p>
                   </div>
                   
-                  <div className="bg-gray-800 rounded-lg p-4">
-                    <h3 className="text-sm font-medium text-gray-400 mb-1">Valor Usufructo</h3>
-                    <p className="text-2xl font-bold text-blue-400">
+                  <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 transition-colors">
+                    <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Valor Usufructo</h3>
+                    <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                       {resultado.valorUsufructo.toLocaleString('es-ES')} €
                     </p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="bg-gray-800 rounded-lg p-4 text-center">
-                    <h3 className="text-sm font-medium text-gray-400 mb-1">Esperanza de Vida</h3>
-                    <p className="text-xl font-bold text-white">{resultado.esperanzaVida} años</p>
+                  <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 text-center transition-colors">
+                    <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Esperanza de Vida</h3>
+                    <p className="text-xl font-bold text-gray-900 dark:text-white">{resultado.esperanzaVida} años</p>
                   </div>
                   
-                  <div className="bg-gray-800 rounded-lg p-4 text-center">
-                    <h3 className="text-sm font-medium text-gray-400 mb-1">Descuento Aplicado</h3>
-                    <p className="text-xl font-bold text-orange-400">{resultado.porcentajeDescuento}%</p>
+                  <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 text-center transition-colors">
+                    <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Descuento Aplicado</h3>
+                    <p className="text-xl font-bold text-orange-600 dark:text-orange-400">{resultado.porcentajeDescuento}%</p>
                   </div>
                   
-                  <div className="bg-gray-800 rounded-lg p-4 text-center">
-                    <h3 className="text-sm font-medium text-gray-400 mb-1">Rentabilidad Anual</h3>
-                    <p className="text-xl font-bold text-purple-400">{resultado.rentabilidadAnual}%</p>
+                  <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 text-center transition-colors">
+                    <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Rentabilidad Anual</h3>
+                    <p className="text-xl font-bold text-purple-600 dark:text-purple-400">{resultado.rentabilidadAnual}%</p>
                   </div>
                 </div>
 
-                <div className="bg-gray-800 rounded-lg p-4">
-                  <h3 className="text-sm font-medium text-gray-400 mb-2">Información Adicional</h3>
-                  <div className="text-sm text-gray-300 space-y-1">
+                <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 transition-colors">
+                  <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">Información Adicional</h3>
+                  <div className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
                     <p>• Cálculo basado en tablas actuariales del INE</p>
                     <p>• Incluye factores de riesgo por edad y sexo</p>
                     <p>• Valoración ajustada a mercado inmobiliario actual</p>
@@ -274,11 +282,11 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-12 pt-8 border-t border-gray-700">
-          <p className="text-gray-400 text-sm">
+        <div className="text-center mt-12 pt-8 border-t border-gray-300 dark:border-gray-700 transition-colors">
+          <p className="text-gray-600 dark:text-gray-400 text-sm">
             © 2024 BareValue. Herramienta profesional de tasación inmobiliaria.
           </p>
-          <p className="text-gray-500 text-xs mt-1">
+          <p className="text-gray-500 dark:text-gray-500 text-xs mt-1">
             Los cálculos son orientativos y deben ser validados por un tasador profesional.
           </p>
         </div>

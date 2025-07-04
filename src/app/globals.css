@@ -1,6 +1,23 @@
 @import "tailwindcss";
 
 :root {
+  /* Tema claro */
+  --background: #ffffff;
+  --foreground: #111827;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #374151;
+  --accent: #f9fafb;
+  --accent-foreground: #111827;
+  --border: #e5e7eb;
+  --input: #ffffff;
+  --card: #ffffff;
+  --card-foreground: #111827;
+}
+
+/* Tema oscuro */
+:root.dark {
   --background: #111827;
   --foreground: #f9fafb;
   --primary: #3b82f6;
@@ -32,13 +49,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -61,4 +71,36 @@ body {
 .gradient-border > div {
   background: var(--card);
   border-radius: calc(0.5rem - 1px);
+}
+
+/* Soporte para transiciones suaves entre temas */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Evitar transiciones en elementos específicos */
+svg,
+img,
+video {
+  transition: none !important;
+}
+
+/* Soporte para preferencias del sistema */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: #111827;
+    --foreground: #f9fafb;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --secondary: #374151;
+    --secondary-foreground: #e5e7eb;
+    --accent: #1f2937;
+    --accent-foreground: #f3f4f6;
+    --border: #374151;
+    --input: #1f2937;
+    --card: #1f2937;
+    --card-foreground: #f9fafb;
+  }
 }

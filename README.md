@@ -7,8 +7,9 @@
 - **Cálculo Profesional**: Tasación de nuda propiedad basada en datos actuariales
 - **Interfaz Intuitiva**: Formulario simple y fácil de usar
 - **Resultados Detallados**: Información completa sobre valoración y rentabilidad
-- **Diseño Moderno**: Interfaz profesional con modo oscuro
+- **Sistema de Temas Avanzado**: Modo claro, oscuro y detección automática del sistema
 - **Responsive**: Funciona perfectamente en desktop y móvil
+- **Accesibilidad**: Diseño inclusivo con soporte completo para diferentes preferencias
 
 ## 📊 Funcionalidades
 
@@ -24,6 +25,14 @@
 - **Esperanza de Vida**: Estimación actuarial
 - **Porcentaje de Descuento**: Factor aplicado por edad
 - **Rentabilidad Anual**: ROI estimado de la inversión
+
+### 🎨 Sistema de Temas
+- **Tema Claro**: Interfaz luminosa ideal para uso diurno
+- **Tema Oscuro**: Interfaz oscura que reduce fatiga visual
+- **Detección Automática**: Sigue las preferencias del sistema operativo
+- **Toggle Inteligente**: Botón para cambio manual entre modos
+- **Persistencia**: Recuerda la preferencia del usuario
+- **Transiciones Suaves**: Cambios fluidos entre temas
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -66,13 +75,25 @@ npm run lint     # Verificar código
 ## 📱 Uso de la Aplicación
 
 1. **Acceder a la aplicación** en tu navegador
-2. **Completar el formulario** con los datos requeridos:
+2. **Seleccionar tema** (opcional): Usar el toggle en la esquina superior derecha
+   - **☀️ Claro**: Para uso en ambientes luminosos
+   - **🌙 Oscuro**: Para reducir fatiga visual
+   - **💻 Sistema**: Sigue automáticamente las preferencias del SO
+3. **Completar el formulario** con los datos requeridos:
    - Valor de la vivienda en euros
    - Edad del propietario (50-100 años)
    - Sexo del propietario
    - Tipo de inversión deseada
-3. **Hacer clic en "Calcular Tasación"**
-4. **Revisar los resultados** detallados en el panel derecho
+4. **Hacer clic en "Calcular Tasación"**
+5. **Revisar los resultados** detallados en el panel derecho
+
+### 🎛️ Controles de Tema
+
+El **Toggle de Tema** se encuentra en la esquina superior derecha y permite:
+- **Cambio instantáneo** entre modos claro, oscuro y sistema
+- **Detección automática** de las preferencias del navegador/OS
+- **Persistencia** - la aplicación recuerda tu elección
+- **Iconos intuitivos** para identificar cada modo fácilmente
 
 ## 🧮 Algoritmo de Cálculo
 
@@ -86,11 +107,13 @@ La aplicación utiliza un algoritmo que considera:
 
 ## 🎨 Diseño y UX
 
-- **Tema Oscuro Profesional**: Diseño corporativo moderno
-- **Efectos Glass**: Elementos con transparencia y desenfoque
-- **Gradientes**: Elementos visuales atractivos
-- **Responsive Design**: Adaptado a todos los dispositivos
-- **Animaciones Suaves**: Transiciones y estados de carga
+- **Sistema de Temas Dual**: Soporte completo para modo claro y oscuro
+- **Detección Automática**: Respeta las preferencias del sistema operativo
+- **Transiciones Fluidas**: Cambios suaves entre temas sin parpadeos
+- **Contraste Optimizado**: Excelente legibilidad en ambos modos
+- **Responsive Design**: Adaptado perfectamente a todos los dispositivos
+- **Accesibilidad**: Cumple estándares WCAG para usuarios con necesidades especiales
+- **Animaciones Inteligentes**: Transiciones que mejoran la experiencia sin distraer
 
 ## 🔮 Próximas Funcionalidades
 
